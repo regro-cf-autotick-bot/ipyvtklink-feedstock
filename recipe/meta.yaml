@@ -10,7 +10,7 @@ source:
   sha256: 9e0a9b7ef8302a5d1149108e8117031b1c9b27095e7eb0c4c2172e5fd8c2f33a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
@@ -21,7 +21,7 @@ requirements:
   run:
     - python >=3.6
     - Pillow
-    - ipywidgets
+    - ipywidgets <8.0
     - ipycanvas >=0.5.0
     - ipyevents >=0.8.0
 
