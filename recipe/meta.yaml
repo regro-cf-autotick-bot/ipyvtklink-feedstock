@@ -1,5 +1,5 @@
 {% set name = "ipyvtklink" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9e0a9b7ef8302a5d1149108e8117031b1c9b27095e7eb0c4c2172e5fd8c2f33a
+  sha256: 7e5a8d0b0b4da9ae5db96618a8ed6ecdbe7b83b0c79b9b52c998129b35da825d
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
