@@ -6,26 +6,28 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 7e5a8d0b0b4da9ae5db96618a8ed6ecdbe7b83b0c79b9b52c998129b35da825d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - Pillow
     - ipywidgets <8.0
     - ipycanvas >=0.5.0
     - ipyevents >=0.8.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - ipyvtklink
 
